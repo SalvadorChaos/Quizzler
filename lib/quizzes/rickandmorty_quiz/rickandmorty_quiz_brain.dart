@@ -1,4 +1,4 @@
-import 'question.dart';
+import '../../question.dart';
 
 class RickAndMortyQuizBrain {
   int _questionNumber = 0;

@@ -1,4 +1,4 @@
-import 'question.dart';
+import '../../question.dart';
 
 class Quiz1Brain {
   int _questionNumber = 0;

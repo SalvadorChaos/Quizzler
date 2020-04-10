@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-import 'quizzes_page.dart';
+import '../../components/button.dart';
+import '../../quizzes_page.dart';
 import 'rickandmorty_quiz_brain.dart';
 
 RickAndMortyQuizBrain rickAndMortyQuizBrain = RickAndMortyQuizBrain();
@@ -34,7 +35,10 @@ class _RickAndMortyQuizPageState extends State<RickAndMortyQuizPage> {
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
               onPressed: () => Navigator.pop(context),
-              color: Color.fromRGBO(0, 179, 134, 1.0),
+              gradient: LinearGradient(colors: [
+                Color.fromRGBO(128, 0, 255, 1.0),
+                Color.fromRGBO(255, 0, 193, 1.0)
+              ]),
             ),
             DialogButton(
               child: Text(
@@ -48,8 +52,8 @@ class _RickAndMortyQuizPageState extends State<RickAndMortyQuizPage> {
                 ),
               ),
               gradient: LinearGradient(colors: [
-                Color.fromRGBO(116, 116, 191, 1.0),
-                Color.fromRGBO(52, 138, 199, 1.0)
+                Color.fromRGBO(255, 0, 54, 1.0),
+                Color.fromRGBO(255, 106, 0, 1.0)
               ]),
             )
           ],
@@ -103,43 +107,21 @@ class _RickAndMortyQuizPageState extends State<RickAndMortyQuizPage> {
             ),
           ),
         ),
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.all(15.0),
-            child: FlatButton(
-              color: Colors.green,
-              child: Text(
-                'True',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24.0,
-                ),
-              ),
-              onPressed: () {
-                //The user picked true.
-                checkAnswer(true);
-              },
-            ),
-          ),
+        Button(
+          color: Colors.green,
+          title: 'True',
+          onPressed: () {
+            //The user picked true.
+            checkAnswer(true);
+          },
         ),
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.all(15.0),
-            child: FlatButton(
-              color: Colors.red,
-              child: Text(
-                'False',
-                style: TextStyle(
-                  fontSize: 24.0,
-                  color: Colors.white,
-                ),
-              ),
-              onPressed: () {
-                //The user picked false.
-                checkAnswer(false);
-              },
-            ),
-          ),
+        Button(
+          color: Colors.red,
+          title: 'False',
+          onPressed: () {
+            //The user picked true.
+            checkAnswer(false);
+          },
         ),
         Row(
           children: scoreKeeper,

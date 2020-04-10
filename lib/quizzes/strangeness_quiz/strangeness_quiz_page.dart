@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-import 'quiz2_brain.dart';
-import 'quizzes_page.dart';
+import '../../components/button.dart';
+import '../../quizzes_page.dart';
+import 'strangeness_quiz_brain.dart';
 
-Quiz2Brain quiz2Brain = Quiz2Brain();
+StrangenessQuizBrain strangenessQuizBrain = StrangenessQuizBrain();
 
-class Quiz2Page extends StatefulWidget {
+class StrangenessQuizPage extends StatefulWidget {
   @override
-  _Quiz2PageState createState() => _Quiz2PageState();
+  _StrangenessQuizPageState createState() => _StrangenessQuizPageState();
 }
 
-class _Quiz2PageState extends State<Quiz2Page> {
+class _StrangenessQuizPageState extends State<StrangenessQuizPage> {
   List<Icon> scoreKeeper = [];
 
   void checkAnswer(bool userPickedAnswer) {
-    bool correctAnswer = quiz2Brain.getCorrectAnswer();
+    bool correctAnswer = strangenessQuizBrain.getCorrectAnswer();
     setState(() {
-      if (quiz2Brain.isFinished() == true) {
-        quiz2Brain.checkAnswer(userPickedAnswer);
-        int sum = quiz2Brain.getFinalScore();
-        int numberOfQuestions = quiz2Brain.getNumberOfQuestions();
-        print(quiz2Brain.correctScoreKeeper());
+      if (strangenessQuizBrain.isFinished() == true) {
+        strangenessQuizBrain.checkAnswer(userPickedAnswer);
+        int sum = strangenessQuizBrain.getFinalScore();
+        int numberOfQuestions = strangenessQuizBrain.getNumberOfQuestions();
+        print(strangenessQuizBrain.correctScoreKeeper());
         print('User got $sum out of $numberOfQuestions questions correct.');
         Alert(
           context: context,
@@ -34,7 +35,10 @@ class _Quiz2PageState extends State<Quiz2Page> {
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
               onPressed: () => Navigator.pop(context),
-              color: Color.fromRGBO(0, 179, 134, 1.0),
+              gradient: LinearGradient(colors: [
+                Color.fromRGBO(128, 0, 255, 1.0),
+                Color.fromRGBO(255, 0, 193, 1.0)
+              ]),
             ),
             DialogButton(
               child: Text(
@@ -48,14 +52,14 @@ class _Quiz2PageState extends State<Quiz2Page> {
                 ),
               ),
               gradient: LinearGradient(colors: [
-                Color.fromRGBO(116, 116, 191, 1.0),
-                Color.fromRGBO(52, 138, 199, 1.0)
+                Color.fromRGBO(255, 0, 54, 1.0),
+                Color.fromRGBO(255, 106, 0, 1.0)
               ]),
             )
           ],
         ).show();
-        quiz2Brain.reset();
-        quiz2Brain.resetFinalScore();
+        strangenessQuizBrain.reset();
+        strangenessQuizBrain.resetFinalScore();
         scoreKeeper = [];
       } else {
         if (userPickedAnswer == correctAnswer) {
@@ -65,7 +69,7 @@ class _Quiz2PageState extends State<Quiz2Page> {
               color: Colors.green,
             ),
           );
-          quiz2Brain.checkAnswer(userPickedAnswer);
+          strangenessQuizBrain.checkAnswer(userPickedAnswer);
         } else {
           scoreKeeper.add(
             Icon(
@@ -75,8 +79,8 @@ class _Quiz2PageState extends State<Quiz2Page> {
           );
           print('User got it wrong.');
         }
-        quiz2Brain.isFinished();
-        quiz2Brain.nextQuestion();
+        strangenessQuizBrain.isFinished();
+        strangenessQuizBrain.nextQuestion();
       }
     });
   }
@@ -93,7 +97,7 @@ class _Quiz2PageState extends State<Quiz2Page> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                quiz2Brain.getQuestionText(),
+                strangenessQuizBrain.getQuestionText(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -103,43 +107,21 @@ class _Quiz2PageState extends State<Quiz2Page> {
             ),
           ),
         ),
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.all(15.0),
-            child: FlatButton(
-              color: Colors.green,
-              child: Text(
-                'True',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24.0,
-                ),
-              ),
-              onPressed: () {
-                //The user picked true.
-                checkAnswer(true);
-              },
-            ),
-          ),
+        Button(
+          color: Colors.green,
+          title: 'True',
+          onPressed: () {
+            //The user picked true.
+            checkAnswer(true);
+          },
         ),
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.all(15.0),
-            child: FlatButton(
-              color: Colors.red,
-              child: Text(
-                'False',
-                style: TextStyle(
-                  fontSize: 24.0,
-                  color: Colors.white,
-                ),
-              ),
-              onPressed: () {
-                //The user picked false.
-                checkAnswer(false);
-              },
-            ),
-          ),
+        Button(
+          color: Colors.red,
+          title: 'False',
+          onPressed: () {
+            //The user picked true.
+            checkAnswer(false);
+          },
         ),
         Row(
           children: scoreKeeper,

@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'main.dart';
+import 'quizzes/alienufo_quiz/alienufo_quiz.dart';
+import 'quizzes/quiz_1/quiz1.dart';
+import 'quizzes/quiz_2/quiz2.dart';
+import 'quizzes/rickandmorty_quiz/rickandmorty_quiz.dart';
+import 'quizzes/saljsfaves_quiz/saljsfaves_quiz.dart';
+import 'quizzes/strangeness_quiz/strangeness_quiz.dart';
 
 class QuizzesPage extends StatelessWidget {
   @override
@@ -12,8 +17,6 @@ class QuizzesPage extends StatelessWidget {
           child: Card(
             color: Colors.black,
             child: Column(
-              //crossAxisAlignment: CrossAxisAlignment.start,
-              //crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Center(
                   child: Padding(
@@ -36,9 +39,8 @@ class QuizzesPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       FlatButton(
-                        color: Colors.green,
                         child: Text(
-                          '1.   Original Quiz',
+                          '1.   Regular Quiz                              ',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 21.0,
@@ -57,19 +59,19 @@ class QuizzesPage extends StatelessWidget {
                     border: Border(
                       top: BorderSide(
                         width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       right: BorderSide(
                         width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       bottom: BorderSide(
                         width: 0.75,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       left: BorderSide(
                         width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                     ),
                   ),
@@ -77,11 +79,11 @@ class QuizzesPage extends StatelessWidget {
                 ),
                 Container(
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       FlatButton(
-                        color: Colors.red,
                         child: Text(
-                          '2.   Original Quiz 2',
+                          '2.   Regular Quiz 2                              ',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 21.0,
@@ -101,19 +103,19 @@ class QuizzesPage extends StatelessWidget {
                     border: Border(
                       top: BorderSide(
                         width: 0.75,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       right: BorderSide(
                         width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       bottom: BorderSide(
                         width: 0.75,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       left: BorderSide(
                         width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                     ),
                   ),
@@ -121,10 +123,11 @@ class QuizzesPage extends StatelessWidget {
                 ),
                 Container(
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       FlatButton(
                         child: Text(
-                          '3.   Strangeness Quiz',
+                          '3.   Strangeness Quiz                              ',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 21.0,
@@ -143,19 +146,19 @@ class QuizzesPage extends StatelessWidget {
                     border: Border(
                       top: BorderSide(
                         width: 0.75,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       right: BorderSide(
                         width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       bottom: BorderSide(
                         width: 0.75,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       left: BorderSide(
                         width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                     ),
                   ),
@@ -163,10 +166,11 @@ class QuizzesPage extends StatelessWidget {
                 ),
                 Container(
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       FlatButton(
                         child: Text(
-                          '4.   Alien/UFO Quiz',
+                          '4.   Alien/UFO Quiz                              ',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 21.0,
@@ -185,19 +189,19 @@ class QuizzesPage extends StatelessWidget {
                     border: Border(
                       top: BorderSide(
                         width: 0.75,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       right: BorderSide(
                         width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       bottom: BorderSide(
-                        width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        width: 0.75,
+                        color: Colors.blueAccent,
                       ),
                       left: BorderSide(
                         width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                     ),
                   ),
@@ -205,10 +209,11 @@ class QuizzesPage extends StatelessWidget {
                 ),
                 Container(
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       FlatButton(
                         child: Text(
-                          '5.   Rick & Morty Quiz',
+                          '5.   Rick & Morty Quiz                              ',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 21.0,
@@ -227,19 +232,19 @@ class QuizzesPage extends StatelessWidget {
                     border: Border(
                       top: BorderSide(
                         width: 0.75,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       right: BorderSide(
                         width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       bottom: BorderSide(
-                        width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        width: 0.75,
+                        color: Colors.blueAccent,
                       ),
                       left: BorderSide(
                         width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                     ),
                   ),
@@ -247,10 +252,11 @@ class QuizzesPage extends StatelessWidget {
                 ),
                 Container(
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       FlatButton(
                         child: Text(
-                          '6.   Sal J\'s Faves Quiz',
+                          '6.   Sal J\'s Faves Quiz                              ',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 21.0,
@@ -269,19 +275,19 @@ class QuizzesPage extends StatelessWidget {
                     border: Border(
                       top: BorderSide(
                         width: 0.75,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       right: BorderSide(
                         width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       bottom: BorderSide(
                         width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                       left: BorderSide(
                         width: 1.5,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.blueAccent,
                       ),
                     ),
                   ),

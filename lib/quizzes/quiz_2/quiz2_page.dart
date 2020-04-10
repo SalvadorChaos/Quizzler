@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-import 'alienufo_quiz_brain.dart';
-import 'quizzes_page.dart';
+import '../../components/button.dart';
+import '../../quizzes_page.dart';
+import 'quiz2_brain.dart';
 
-AlienUFOQuizBrain alienUfoQuizBrain = AlienUFOQuizBrain();
+Quiz2Brain quiz2Brain = Quiz2Brain();
 
-class AlienUFOQuizPage extends StatefulWidget {
+class Quiz2Page extends StatefulWidget {
   @override
-  _AlienUFOQuizPageState createState() => _AlienUFOQuizPageState();
+  _Quiz2PageState createState() => _Quiz2PageState();
 }
 
-class _AlienUFOQuizPageState extends State<AlienUFOQuizPage> {
+class _Quiz2PageState extends State<Quiz2Page> {
   List<Icon> scoreKeeper = [];
 
   void checkAnswer(bool userPickedAnswer) {
-    bool correctAnswer = alienUfoQuizBrain.getCorrectAnswer();
+    bool correctAnswer = quiz2Brain.getCorrectAnswer();
     setState(() {
-      if (alienUfoQuizBrain.isFinished() == true) {
-        alienUfoQuizBrain.checkAnswer(userPickedAnswer);
-        int sum = alienUfoQuizBrain.getFinalScore();
-        int numberOfQuestions = alienUfoQuizBrain.getNumberOfQuestions();
-        print(alienUfoQuizBrain.correctScoreKeeper());
+      if (quiz2Brain.isFinished() == true) {
+        quiz2Brain.checkAnswer(userPickedAnswer);
+        int sum = quiz2Brain.getFinalScore();
+        int numberOfQuestions = quiz2Brain.getNumberOfQuestions();
+        print(quiz2Brain.correctScoreKeeper());
         print('User got $sum out of $numberOfQuestions questions correct.');
         Alert(
           context: context,
@@ -34,7 +35,10 @@ class _AlienUFOQuizPageState extends State<AlienUFOQuizPage> {
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
               onPressed: () => Navigator.pop(context),
-              color: Color.fromRGBO(0, 179, 134, 1.0),
+              gradient: LinearGradient(colors: [
+                Color.fromRGBO(128, 0, 255, 1.0),
+                Color.fromRGBO(255, 0, 193, 1.0)
+              ]),
             ),
             DialogButton(
               child: Text(
@@ -48,14 +52,14 @@ class _AlienUFOQuizPageState extends State<AlienUFOQuizPage> {
                 ),
               ),
               gradient: LinearGradient(colors: [
-                Color.fromRGBO(116, 116, 191, 1.0),
-                Color.fromRGBO(52, 138, 199, 1.0)
+                Color.fromRGBO(255, 0, 54, 1.0),
+                Color.fromRGBO(255, 106, 0, 1.0)
               ]),
             )
           ],
         ).show();
-        alienUfoQuizBrain.reset();
-        alienUfoQuizBrain.resetFinalScore();
+        quiz2Brain.reset();
+        quiz2Brain.resetFinalScore();
         scoreKeeper = [];
       } else {
         if (userPickedAnswer == correctAnswer) {
@@ -65,7 +69,7 @@ class _AlienUFOQuizPageState extends State<AlienUFOQuizPage> {
               color: Colors.green,
             ),
           );
-          alienUfoQuizBrain.checkAnswer(userPickedAnswer);
+          quiz2Brain.checkAnswer(userPickedAnswer);
         } else {
           scoreKeeper.add(
             Icon(
@@ -75,8 +79,8 @@ class _AlienUFOQuizPageState extends State<AlienUFOQuizPage> {
           );
           print('User got it wrong.');
         }
-        alienUfoQuizBrain.isFinished();
-        alienUfoQuizBrain.nextQuestion();
+        quiz2Brain.isFinished();
+        quiz2Brain.nextQuestion();
       }
     });
   }
@@ -93,7 +97,7 @@ class _AlienUFOQuizPageState extends State<AlienUFOQuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                alienUfoQuizBrain.getQuestionText(),
+                quiz2Brain.getQuestionText(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -103,43 +107,21 @@ class _AlienUFOQuizPageState extends State<AlienUFOQuizPage> {
             ),
           ),
         ),
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.all(15.0),
-            child: FlatButton(
-              color: Colors.green,
-              child: Text(
-                'True',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24.0,
-                ),
-              ),
-              onPressed: () {
-                //The user picked true.
-                checkAnswer(true);
-              },
-            ),
-          ),
+        Button(
+          color: Colors.green,
+          title: 'True',
+          onPressed: () {
+            //The user picked true.
+            checkAnswer(true);
+          },
         ),
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.all(15.0),
-            child: FlatButton(
-              color: Colors.red,
-              child: Text(
-                'False',
-                style: TextStyle(
-                  fontSize: 24.0,
-                  color: Colors.white,
-                ),
-              ),
-              onPressed: () {
-                //The user picked false.
-                checkAnswer(false);
-              },
-            ),
-          ),
+        Button(
+          color: Colors.red,
+          title: 'False',
+          onPressed: () {
+            //The user picked true.
+            checkAnswer(false);
+          },
         ),
         Row(
           children: scoreKeeper,

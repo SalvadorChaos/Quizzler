@@ -1,4 +1,4 @@
-import 'question.dart';
+import '../../question.dart';
 
 class AlienUFOQuizBrain {
   int _questionNumber = 0;
@@ -21,7 +21,7 @@ class AlienUFOQuizBrain {
       false,
     ),
     Question(
-      'Project Sign was succeeded by Project Grudge, which in 1952 was itself replaced by Project Blue Book which was the longest-lived of the official inquiries into UFOs.',
+      'Project Sign was succeeded by Project Grudge, which in 1952 was replaced by Project Blue Book (the longest-lived of known Government inquiries into UFOs).',
       true,
     ),
     Question(
@@ -29,11 +29,11 @@ class AlienUFOQuizBrain {
       true,
     ),
     Question(
-      'Scientists say that there are TEN TIMES more stars in our universe than there are grains of sand on the Earth.',
+      'Scientists say that there are 10 times more stars in our universe than there are grains of sand on Earth.',
       true,
     ),
     Question(
-      'Roswell, New Mexico, NEVER experienced sightings of a so-called flying saucer that enthralled the town.',
+      'Roswell, New Mexico, never experienced sightings of a so-called flying saucer that enthralled the town.',
       false,
     ),
     Question(
@@ -45,12 +45,12 @@ class AlienUFOQuizBrain {
       true,
     ),
     Question(
-      'During the presidential campaign of 1976, future President Jimmy Carter was forthcoming about his belief that he had seen an alien.',
-      false,
-    ),
-    Question(
       'Both Ronald Reagan and Jimmy Carter have witnessed a UFO.',
       true,
+    ),
+    Question(
+      'During the presidential campaign of 1976, future President Jimmy Carter was forthcoming about his belief that he had seen an alien.',
+      false,
     ),
     Question(
       'The mass UFO sighting that occurred on March 13,1997, known as The Phoenix Lights, was reported to the control tower at Phoenix Sky Harbor International Airport by licensed pilot and actor Kurt Russell.',

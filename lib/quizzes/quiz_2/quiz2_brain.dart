@@ -1,67 +1,63 @@
-import 'question.dart';
+import '../../question.dart';
 
-class SalJsFavesQuizBrain {
+class Quiz2Brain {
   int _questionNumber = 0;
 
   List<Question> _questionBank = [
     Question(
-      'Sal J\'s favorite colors are green and black.',
+      'Donkey Kong got his name because his creator believed ‘donkey’ meant ‘stupid’ in English and wanted to convey the impression that the character was a “Stupid Ape”',
       true,
     ),
     Question(
-      'Sal J\'s favorite type of food is italian food.',
+      'There\'s a real psychological disorder that makes people believe that they are a cow.',
       true,
     ),
     Question(
-      'Sal J\'s favorite show is Rick and Morty.',
+      'Mr. Potato Head was the first toy to be advertised on TV.',
+      true,
+    ),
+    Question(
+      'Admiral Ackbar from Star Wars Episode VI: Return of the Jedi just was a man in a suit.',
       false,
     ),
     Question(
-      'Sal J\'s favorite movie is a tie between Vanilla Sky and Inception.',
+      'A duel between three people is actually called a truel.',
       true,
     ),
     Question(
-      'Sal J\'s favorite musical artist is Slipknot.',
+      'The television was invented only two years after the invention of sliced bread.',
+      true,
+    ),
+    Question(
+      'Sonic the Hedgehog\'s full name is actually Ogilvie Maurice Hedgehog.',
+      true,
+    ),
+    Question(
+      'Iguanas only have two eyes.',
       false,
     ),
     Question(
-      'Sal J prefers DC comics over Marvel comics.',
+      'The ocean takes up about 71% of Earth\'s space.',
       true,
     ),
     Question(
-      'Sal J doesn\'t know how to whistle.',
+      'A whopping 95% of that ocean is completely unexplored.',
       true,
     ),
     Question(
-      'Sal J doesn\'t know how to snap his fingers.',
+      'Alligators will NOT give manatees the right of way if they are swimming near each other.',
       false,
     ),
     Question(
-      'Sal J\'s favorite show is Lost.',
-      true,
-    ),
-    Question(
-      'Sal J\'s favorite passtime is to consume stories (books, movies, shows, etc).',
-      true,
-    ),
-    Question(
-      'Sal J\'s favorite superhero/antihero is Deadpool.',
+      'There are no cat breeds that are bred specifically to exhibit dog-like behavior.',
       false,
     ),
     Question(
-      'Sal J\'s favorite superhero/antihero is Lobo.',
+      'Sunsets on Mars are blue.',
       true,
     ),
     Question(
-      'Sal J\'s favorite social media is Twitter.',
-      true,
-    ),
-    Question(
-      'Sal J believes The Ancient Astronaut Hypothesis to be true.',
-      true,
-    ),
-    Question(
-      'Sal J believes The Simulation Hypothesis to be true.',
+      'In 2014, a missing woman on a vacation in Iceland was found when it was discovered that she was in the search party looking for herself.',
       true,
     ),
   ];
